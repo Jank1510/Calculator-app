@@ -1,0 +1,139 @@
+
+body{
+}
+#padre{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    display: flex;
+    background-color: hsl(222, 26%, 31%);
+}
+
+#Cabezera{
+    height: 95px;
+    margin-top: 7vh;
+    color:white
+}
+.flotante{
+    float: left;
+}
+#tema1{
+    background-color: hsl(6, 63%, 50%);
+}
+.btn{
+    width: 17px;
+    height: 17px;
+    margin-left: 5px;
+    border-radius: 10px;
+}
+.num{
+    margin-left: 12px;
+    margin-bottom: -16px;
+}
+#contenedorBTN{
+    background-color: hsl(223, 31%, 20%);
+    display: inline-block;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#ContenedorTHEMES{
+    float: inline-end;
+}
+#txtTHEME{
+    margin-top: 18px;
+    margin-right: 6px;
+}
+#seccionesTHEMES{
+    display: block;
+}
+
+.filas{
+    display: flex;
+}
+.btnCal{
+    font-size:32px;
+    font-weight: 700;
+    text-align: center;
+    width: 50%;
+    background-color: hsl(30, 25%, 89%);
+    margin: 1vh;
+    border-radius: 15px;
+    color: hsl(221, 14%, 31%);
+    cursor: pointer;
+    box-shadow:0px 6px 0px 0px hsl(28, 16%, 65%);
+}
+.btnCal p{
+    margin: 1vh;
+}
+.shadowDelReset{
+    background-color: hsl(225, 21%, 49%) ;
+    background-color: hsl(225, 21%, 49%);
+    box-shadow:  0px 6px 0px 0px hsl(224, 28%, 35%);
+    color: white;
+}
+#resultado{
+    background-color: hsl(6, 63%, 50%);
+    color: white;
+    box-shadow:  0px 6px 0px 0px  hsl(6, 70%, 34%); 
+}
+.txtBlanco{
+    color: rgb(255, 255, 255);
+}
+#divMain{
+    display: inline-block;
+    text-align: center;
+} 
+#pantalla{
+    justify-content: right;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    color: white;
+}
+#numerosP{
+    margin-top: 0;
+    font-size: 15vh;
+}
+/****************mostly fluid****************/
+
+@media (min-width: 375px) {
+    #Contenido{
+        width: 85%;
+        height: 100%;
+    }
+    #Entrada{
+        width: 100%;
+        height: 15vh;
+        background-color: hsl(224, 36%, 15%);
+        border-radius: 5px;
+    }
+    #Operaciones{
+        background-color: hsl(223, 31%, 20%);
+        margin-top: 3vh;
+        border-radius: 5px;
+        padding: 2vh 20px 2vh 20px;
+    }
+}
+@media (min-width: 1440px) {
+    #Contenido{
+        width: 650px;
+        height: 100%;
+    }
+    #Entrada{
+        width: 100%;
+        height: 15vh;
+        background-color: hsl(224, 36%, 15%);
+        border-radius: 5px;
+    }
+    #Operaciones{
+        width: 570px;
+        background-color: hsl(223, 31%, 20%);
+        margin-top: 3vh;
+        border-radius: 5px;
+        padding: 4vh 40px 4vh 40px;
+    }
+}
