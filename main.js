@@ -111,11 +111,13 @@ var identificadorOperacion = ""
 var resultadoFinal
 
 function redimencionNum() {
+    var pantallacontenido = document.getElementById("numerosP").textContent;
     var pantalla = document.getElementById("numerosP")
+    var numerosArray = pantallacontenido.split('')
     var contenido = document.getElementById("Contenido")
-    var pixelesNum = parseInt(pantalla.offsetWidth)
+
     if (contenido.offsetWidth != 650) {
-        if ((numeros.length) >= (6) || resultadoFinal >= 9999999999 || resultadoFinal <= -999999999) {
+        if ((numerosArray.length) >= (7) || resultadoFinal >= 9999999999 || resultadoFinal <= -999999999) {
             pantalla.style.marginTop = "35px"
 
             pantalla.style.fontSize = "225%"
@@ -128,7 +130,7 @@ function redimencionNum() {
     } else {
         pantalla.style.marginTop = "0"
 
-        if ((numeros.length) >= (10) || resultadoFinal >= 9999999999 || resultadoFinal <= -999999999) {
+        if ((numerosArray.length) >= (10) || resultadoFinal >= 9999999999 || resultadoFinal <= -999999999) {
 
             pantalla.style.fontSize = "70px"
         }
@@ -383,6 +385,7 @@ function multiplicacion() {
         if (numerosEnOperacionMultiplicacion.length === 2) {
             resultadoFinal = Math.round(((numerosEnOperacionMultiplicacion[0] * numerosEnOperacionMultiplicacion[1]) + Number.EPSILON) * 100) / 100
             redimencionNum()
+            console.log(resultadoFinal)
             if (resultadoFinal > 99999999999) {
                 pantalla.innerHTML = "+9999999999999"
                 numerosEnOperacionMultiplicacion = []
@@ -442,21 +445,28 @@ function dividir() {
 }
 
 function resultado() {
-    redimencionNum()
     var pantallacontenido = document.getElementById("numerosP").textContent;
     var pantalla = document.getElementById("numerosP");
 
     if (identificadorOperacion === "+") {
         suma()
+        redimencionNum()
+
     } else {
         if (identificadorOperacion === "-") {
             resta()
+            redimencionNum()
+
         } else {
             if (identificadorOperacion === "*") {
                 multiplicacion()
+                redimencionNum()
+
             } else {
                 if (identificadorOperacion === "/") {
                     dividir()
+                    redimencionNum()
+
                 }
             }
         }
@@ -471,6 +481,8 @@ function resultado() {
 }
 function reset() {
     var pantalla = document.getElementById("numerosP");
+    var contenido = document.getElementById("Contenido")
+
     pantalla.innerHTML = ""
     numeros = []
     numerosEnOperacionResta = []
@@ -480,5 +492,16 @@ function reset() {
     numero1 = 0
     resultadoFinal = 0
     identificadorOperacion = ""
+    if (contenido.offsetWidth != 650) {
+
+        pantalla.style.marginTop = "15px"
+
+        pantalla.style.fontSize = "500%"
+
+    } else {
+        pantalla.style.marginTop = "0"
+        pantalla.style.fontSize = "100px"
+
+    }
 
 }
