@@ -41,7 +41,7 @@ body{
     cursor: pointer;
 }
 #ContenedorTHEMES{
-    float: inline-end;
+    float: right;
 }
 #txtTHEME{
     margin-top: 18px;
