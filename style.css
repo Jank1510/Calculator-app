@@ -127,7 +127,7 @@ body{
         padding: 2vh 20px 2vh 20px;
     }
 }
-@media (min-width: 1440px) {
+@media (min-width: 1200px) {
     #Contenido{
         width: 650px;
         height: 100%;
