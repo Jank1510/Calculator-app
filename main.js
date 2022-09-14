@@ -135,7 +135,7 @@ function redimencionNum() {
             pantalla.style.fontSize = "70px"
         }
         if ((numeros.length) < (10) && (numeros.length) > (0)) {
-            pantalla.style.fontSize = "100px"
+            pantalla.style.fontSize = "90px"
         }
     }
 }
@@ -500,7 +500,7 @@ function reset() {
 
     } else {
         pantalla.style.marginTop = "0"
-        pantalla.style.fontSize = "100px"
+        pantalla.style.fontSize = "90px"
 
     }
 
