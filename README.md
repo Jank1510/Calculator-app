@@ -1,5 +1,5 @@
 # Calculator-app
-Calculator app Challenge
+Calculator app Challenge finalizado  ☑
 
 link:
 https://jank1510.github.io/Calculator-app/
