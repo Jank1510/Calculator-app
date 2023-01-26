@@ -1,149 +1,228 @@
 .attribution {
-font-size: 11px;
-text-align: center;
-position: absolute;
-bottom: 0;
+    font-size: 11px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
 }
 
 .attribution a {
     color: hsl(228, 45%, 44%);
 }
-body{
+
+body {
+    margin: 0;
 }
-#padre{
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+
+#padre {
     justify-content: center;
     display: flex;
     background-color: hsl(222, 26%, 31%);
-    padding-bottom: 2rem;
+    height: 100vh;
 
 }
 
-#Cabezera{
+#Cabezera {
     height: 95px;
-    margin-top: 7vh;
-    color:white
+    color: white
 }
-.flotante{
+
+.flotante {
     float: left;
 }
-#tema1{
+
+#tema1 {
     background-color: hsl(6, 63%, 50%);
 }
-.btn{
+
+.btn {
     width: 17px;
     height: 17px;
     margin-left: 5px;
     border-radius: 10px;
 }
-.num{
+
+.num {
     margin-left: 12px;
     margin-bottom: -16px;
 }
-#contenedorBTN{
+
+#contenedorBTN {
     background-color: hsl(223, 31%, 20%);
     display: inline-block;
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
 }
-#ContenedorTHEMES{
+
+#ContenedorTHEMES {
     float: right;
 }
-#txtTHEME{
+
+#txtTHEME {
     margin-top: 18px;
     margin-right: 6px;
 }
-#seccionesTHEMES{
+
+#seccionesTHEMES {
     display: block;
 }
 
-.filas{
+.filas {
     display: flex;
 }
-.btnCal{
-    font-size:32px;
+
+.btnCal {
+
+    font-size: 32px;
     font-weight: 700;
     text-align: center;
-    width: 50%;
     background-color: hsl(30, 25%, 89%);
-    margin: 1vh;
     border-radius: 15px;
     color: hsl(221, 14%, 31%);
     cursor: pointer;
-    box-shadow:0px 6px 0px 0px hsl(28, 16%, 65%);
+    box-shadow: 0px 6px 0px 0px hsl(28, 16%, 65%);
 }
-.btnCal p{
+
+.btnCal p {
     margin: 1vh;
 }
-.shadowDelReset{
-    background-color: hsl(225, 21%, 49%) ;
+
+.shadowDelReset {
     background-color: hsl(225, 21%, 49%);
-    box-shadow:  0px 6px 0px 0px hsl(224, 28%, 35%);
+    background-color: hsl(225, 21%, 49%);
+    box-shadow: 0px 6px 0px 0px hsl(224, 28%, 35%);
     color: white;
 }
-#resultado{
+
+#resultado {
     background-color: hsl(6, 63%, 50%);
     color: white;
-    box-shadow:  0px 6px 0px 0px  hsl(6, 70%, 34%); 
+    box-shadow: 0px 6px 0px 0px hsl(6, 70%, 34%);
 }
-.txtBlanco{
+
+.txtBlanco {
     color: rgb(255, 255, 255);
 }
-#divMain{
+
+#divMain {
     display: inline-block;
     text-align: center;
-} 
-#pantalla{
+}
+
+#pantalla {
     justify-content: right;
-    width: 100%;
     height: 100%;
     display: flex;
     color: white;
 }
-#numerosP{
+
+#numerosP {
     margin-top: 0;
     font-size: 100px;
 }
+
 /****************mostly fluid****************/
 
 @media (min-width: 375px) {
-    #Contenido{
+    #Contenido {
         width: 85%;
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
     }
-    #Entrada{
-        width: 100%;
+
+    #Entrada {
         height: 15vh;
         background-color: hsl(224, 36%, 15%);
         border-radius: 5px;
     }
-    #Operaciones{
+
+    #Operaciones {
         background-color: hsl(223, 31%, 20%);
         margin-top: 3vh;
         border-radius: 5px;
-        padding: 2vh 20px 2vh 20px;
+        padding: 4vw;
+        display: grid;
+        grid-template-columns: 18vw 18vw 18vw 18vw;
+        width: 80vw;
+        column-gap: 2.5vw;
+        row-gap: 2vw;
+        justify-content: center;
     }
+
+    .btnCal {
+        width: 18vw;
+    }
+
+    #pantalla,
+    #Entrada,#Cabezera {
+        width: 88vw;
+    }
+
+    #RESET {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        width: 38.5vw;
+
+
+    }
+
+    #resultado {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        width: 38.5vw;
+    }
+
 }
+
 @media (min-width: 1200px) {
-    #Contenido{
-        width: 650px;
-        height: 100%;
+    #Contenido {
+        width: 40vw;
+
     }
-    #Entrada{
-        width: 100%;
+
+    #Entrada {
         height: 15vh;
         background-color: hsl(224, 36%, 15%);
         border-radius: 5px;
     }
-    #Operaciones{
-        width: 570px;
+
+    #Operaciones {
         background-color: hsl(223, 31%, 20%);
         margin-top: 3vh;
         border-radius: 5px;
-        padding: 4vh 40px 4vh 40px;
+        padding: 2vw;
+        display: grid;
+        grid-template-columns: 7vw 7vw 7vw 7vw;
+        width: 34vw;
+        row-gap: 1.5vw;
+        column-gap: 2vw;
     }
+
+    .btnCal {
+        width: 7vw;
+    }
+
+    #RESET {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        width: 15.5vw;
+
+
+    }
+
+    #resultado {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        width: 15.5vw;
+    }
+
+    #pantalla,
+    #Entrada,#Cabezera {
+        width: 38vw;
+    }
+
 }

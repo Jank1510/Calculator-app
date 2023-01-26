@@ -102,406 +102,114 @@ function temas() {
     }
 }
 var numeros = []
-var numerosEnOperacionSuma = []
-var numerosEnOperacionResta = []
-var numerosEnOperacionMultiplicacion = []
-var numerosEnOperacionDivicion = []
-var numero1 = 0
-var identificadorOperacion = ""
-var resultadoFinal
+
 
 function redimencionNum() {
-    var pantallacontenido = document.getElementById("numerosP").textContent;
-    var pantalla = document.getElementById("numerosP")
-    var numerosArray = pantallacontenido.split('')
-    var contenido = document.getElementById("Contenido")
-
-    if (contenido.offsetWidth != 650) {
-        if ((numerosArray.length) >= (7) || resultadoFinal >= 9999999999 || resultadoFinal <= -999999999) {
-            pantalla.style.marginTop = "35px"
-
-            pantalla.style.fontSize = "225%"
-        }
-        if ((numeros.length) < (6) && (numeros.length) > (0)) {
-            pantalla.style.marginTop = "15px"
-
-            pantalla.style.fontSize = "500%"
-        }
-    } else {
-        pantalla.style.marginTop = "0"
-
-        if ((numerosArray.length) >= (10) || resultadoFinal >= 9999999999 || resultadoFinal <= -999999999) {
-
-            pantalla.style.fontSize = "70px"
-        }
-        if ((numeros.length) < (10) && (numeros.length) > (0)) {
-            pantalla.style.fontSize = "90px"
-        }
-    }
 }
-function del() {
-    redimencionNum()
-    var pantallacontenido = document.getElementById("numerosP").textContent;
-    var pantalla = document.getElementById("numerosP")
-    var numerosArray = pantallacontenido.split('')
-    numerosArray.pop()
-    numeros = numerosArray
-    var numeroArray = numerosArray.toString().replace(/,/g, "")
-    pantalla.innerHTML = numeroArray
-}
-function punto() {
-    redimencionNum()
-    var pantalla = document.getElementById("numerosP")
-    var pantallacontenido = document.getElementById("numerosP").textContent;
 
-
-    var numerosArray = pantallacontenido.split('')
-    console.log(numerosArray)
-    if (numerosArray.indexOf(".") === -1) {
-        numeros.push(".")
+let valores = (numero) => {
+    var pantalla = document.getElementById("numerosP")
+    if (numeros.length < 14) {
+        numeros.push(numero)
     }
     var numeroArray = numeros.toString().replace(/,/g, "")
     pantalla.innerHTML = numeroArray
-
 }
 function cero() {
     redimencionNum()
-    var pantalla = document.getElementById("numerosP")
-    var contenido = document.getElementById("Contenido")
-    if (numeros.length < 14) {
-        numeros.push(0)
-    }
-    var numeroArray = numeros.toString().replace(/,/g, "")
-    pantalla.innerHTML = numeroArray
+    valores(0)
 }
 function uno() {
     redimencionNum()
-    var pantalla = document.getElementById("numerosP")
-    var contenido = document.getElementById("Contenido")
-    if (numeros.length < 14) {
-        numeros.push(1)
-    }
-    var numeroArray = numeros.toString().replace(/,/g, "")
-    pantalla.innerHTML = numeroArray
+    valores(1)
 }
 function dos() {
     redimencionNum()
-    var pantalla = document.getElementById("numerosP")
-    var contenido = document.getElementById("Contenido")
-    if (numeros.length < 14) {
-        numeros.push(2)
-    }
-    var numeroArray = numeros.toString().replace(/,/g, "")
-    pantalla.innerHTML = numeroArray
+    valores(2)
 }
 function tres() {
     redimencionNum()
-    var pantalla = document.getElementById("numerosP")
-    var contenido = document.getElementById("Contenido")
-    if (numeros.length < 14) {
-        numeros.push(3)
-    }
-    var numeroArray = numeros.toString().replace(/,/g, "")
-    pantalla.innerHTML = numeroArray
+    valores(3)
 }
 function cuatro() {
     redimencionNum()
-    var pantalla = document.getElementById("numerosP")
-    var contenido = document.getElementById("Contenido")
-    if (numeros.length < 14) {
-        numeros.push(4)
-    }
-    var numeroArray = numeros.toString().replace(/,/g, "")
-    pantalla.innerHTML = numeroArray
+    valores(4)
 }
 function cinco() {
     redimencionNum()
-    var pantalla = document.getElementById("numerosP")
-    var contenido = document.getElementById("Contenido")
-    if (numeros.length < 14) {
-        numeros.push(5)
-    }
-    var numeroArray = numeros.toString().replace(/,/g, "")
-    pantalla.innerHTML = numeroArray
+    valores(5)
 }
 function seis() {
     redimencionNum()
-    var pantalla = document.getElementById("numerosP")
-    var contenido = document.getElementById("Contenido")
-    if (numeros.length < 14) {
-        numeros.push(6)
-    }
-    var numeroArray = numeros.toString().replace(/,/g, "")
-    pantalla.innerHTML = numeroArray
+    valores(6)
 }
 function siete() {
     redimencionNum()
-    var pantalla = document.getElementById("numerosP")
-    var contenido = document.getElementById("Contenido")
-    if (numeros.length < 14) {
-        numeros.push(7)
-    }
-    var numeroArray = numeros.toString().replace(/,/g, "")
-    pantalla.innerHTML = numeroArray
+    valores(7)
 }
 function ocho() {
     redimencionNum()
-    var pantalla = document.getElementById("numerosP")
-    var contenido = document.getElementById("Contenido")
-    if (numeros.length < 14) {
-        numeros.push(8)
-    }
-    var numeroArray = numeros.toString().replace(/,/g, "")
-    pantalla.innerHTML = numeroArray
+    valores(8)
 }
 function nueve() {
     redimencionNum()
-    var pantalla = document.getElementById("numerosP")
-    var contenido = document.getElementById("Contenido")
-    if (numeros.length < 14) {
-        numeros.push(9)
-    }
-    var numeroArray = numeros.toString().replace(/,/g, "")
-    pantalla.innerHTML = numeroArray
+    valores(9)
+}
+function del() {
 }
 
-function suma() {
-    if (identificadorOperacion === "-") {
-        numerosEnOperacionSuma = []
-        resta()
-    } else {
-        if (identificadorOperacion === "*") {
-            numerosEnOperacionSuma = []
-            multiplicacion()
-        } else {
-            if (identificadorOperacion === "/") {
-                numerosEnOperacionSuma = []
-                dividir()
-            }
-        }
-    }
-    var pantallacontenido = document.getElementById("numerosP").textContent;
-    var pantalla = document.getElementById("numerosP")
+function punto() {
 
-    numero1 = parseFloat(pantallacontenido)
+}
+let numerosingresados = []
+let operacion = (tipoOperacion) => {
+    let numerodigitado = parseFloat(document.getElementById("numerosP").innerText)
+    numerosingresados.push(numerodigitado)
     numeros = []
-    if (numero1 != 0) {
-        numerosEnOperacionSuma.push(numero1)
-        if (numerosEnOperacionSuma.length === 2) {
-            resultadoFinal = Math.round(((numerosEnOperacionSuma[0] + numerosEnOperacionSuma[1]) + Number.EPSILON) * 100) / 100
-            pantalla.innerHTML = resultadoFinal
-            numerosEnOperacionSuma = []
-            numerosEnOperacionSuma.push(resultadoFinal)
-            redimencionNum()
-            if (resultadoFinal > 99999999999) {
-                pantalla.innerHTML = "+9999999999999"
-                numerosEnOperacionSuma = []
+    if (numerosingresados.length >= 2) {//se verifica q existan dos numeros para operar
+        switch (tipoOperacion) {
+            case '+':
+                resultadelosdosnumeros = numerosingresados[0] + numerosingresados[1]
+                numerosingresados = [resultadelosdosnumeros]//se reinica el valor de los dos datos a  un solo dato
+                break
+            case '-':
+                resultadelosdosnumeros = numerosingresados[0] - numerosingresados[1]
+                numerosingresados = [resultadelosdosnumeros]//se reinica el valor de los dos datos a  un solo dato
+                break
+            case '*':
+                resultadelosdosnumeros = numerosingresados[0] * numerosingresados[1]
+                numerosingresados = [resultadelosdosnumeros]//se reinica el valor de los dos datos a  un solo dato
+                break
+            case '/':
+                resultadelosdosnumeros = numerosingresados[0] / numerosingresados[1]
+                numerosingresados = [resultadelosdosnumeros]//se reinica el valor de los dos datos a  un solo dato
+                break        }
+        document.getElementById("numerosP").innerHTML =(resultadelosdosnumeros)
+        numerosingresados = [resultadelosdosnumeros]//se reinica el valor de los dos datos a  un solo dato
+    }else{
 
-            } else {
-                if (resultadoFinal < -9999999999) {
-                    pantalla.innerHTML = "-9999999999999"
-                    numerosEnOperacionSuma = []
-                } else {
-
-                    pantalla.innerHTML = resultadoFinal
-                    numerosEnOperacionSuma = []
-                    numerosEnOperacionSuma.push(resultadoFinal)
-                }
-            }
-        }
     }
-    identificadorOperacion = "+"
+}
+function suma() {
+    operacion('+')
 }
 function resta() {
-    if (identificadorOperacion === "+") {
-        numerosEnOperacionResta = []
-        suma()
-    } else {
-        if (identificadorOperacion === "*") {
-            numerosEnOperacionResta = []
-            multiplicacion()
-        } else {
-            if (identificadorOperacion === "/") {
-                numerosEnOperacionResta = []
-                dividir()
-            }
-        }
-    }
+    operacion('-')
 
-    var pantallacontenido = document.getElementById("numerosP").textContent;
-    var pantalla = document.getElementById("numerosP")
-
-    numero1 = parseFloat(pantallacontenido)
-    numeros = []
-    if (numero1 != 0) {
-        numerosEnOperacionResta.push(numero1)
-        if (numerosEnOperacionResta.length === 2) {
-            resultadoFinal = Math.round(((numerosEnOperacionResta[0] - numerosEnOperacionResta[1]) + Number.EPSILON) * 100) / 100
-            pantalla.innerHTML = resultadoFinal
-            numerosEnOperacionResta = []
-            numerosEnOperacionResta.push(resultadoFinal)
-            redimencionNum()
-            if (resultadoFinal > 99999999999) {
-                pantalla.innerHTML = "+9999999999999"
-                numerosEnOperacionResta = []
-
-            } else {
-                if (resultadoFinal < -9999999999) {
-                    pantalla.innerHTML = "-9999999999999"
-                    numerosEnOperacionResta = []
-                } else {
-
-                    pantalla.innerHTML = resultadoFinal
-                    numerosEnOperacionResta = []
-                    numerosEnOperacionResta.push(resultadoFinal)
-                }
-            }
-        }
-    }
-    identificadorOperacion = "-"
 }
 function multiplicacion() {
-    if (identificadorOperacion === "-") {
-        numerosEnOperacionMultiplicacion = []
-        resta()
-    } else {
-        if (identificadorOperacion === "+") {
-            numerosEnOperacionMultiplicacion = []
-            suma()
-        } else {
-            if (identificadorOperacion === "/") {
-                numerosEnOperacionMultiplicacion = []
-                dividir()
-            }
-        }
-    }
-    var pantallacontenido = document.getElementById("numerosP").textContent;
-    var pantalla = document.getElementById("numerosP")
+    operacion('*')
 
-    numero1 = parseFloat(pantallacontenido)
-    numeros = []
-    if (numero1 != 0) {
-        numerosEnOperacionMultiplicacion.push(numero1)
-        if (numerosEnOperacionMultiplicacion.length === 2) {
-            resultadoFinal = Math.round(((numerosEnOperacionMultiplicacion[0] * numerosEnOperacionMultiplicacion[1]) + Number.EPSILON) * 100) / 100
-            redimencionNum()
-            console.log(resultadoFinal)
-            if (resultadoFinal > 99999999999) {
-                pantalla.innerHTML = "+9999999999999"
-                numerosEnOperacionMultiplicacion = []
-
-            } else {
-                if (resultadoFinal < -9999999999) {
-                    pantalla.innerHTML = "-9999999999999"
-                    numerosEnOperacionMultiplicacion = []
-                } else {
-
-                    pantalla.innerHTML = resultadoFinal
-                    numerosEnOperacionMultiplicacion = []
-                    numerosEnOperacionMultiplicacion.push(resultadoFinal)
-                }
-            }
-        }
-    }
-    identificadorOperacion = "*"
 }
 function dividir() {
-    if (identificadorOperacion === "-") {
-        numerosEnOperacionDivicion = []
-        resta()
-    } else {
-        if (identificadorOperacion === "+") {
-            numerosEnOperacionDivicion = []
-            suma()
-        } else {
-            if (identificadorOperacion === "*") {
-                numerosEnOperacionDivicion = []
-                multiplicacion()
-            }
-        }
-    }
-    var pantallacontenido = document.getElementById("numerosP").textContent;
-    var pantalla = document.getElementById("numerosP")
 
-    numero1 = parseFloat(pantallacontenido)
-    numeros = []
-    if (numero1 != 0) {
-        numerosEnOperacionDivicion.push(numero1)
-        if (numerosEnOperacionDivicion.length === 2) {
-            resultadoFinal = Math.round(((numerosEnOperacionDivicion[0] / numerosEnOperacionDivicion[1]) + Number.EPSILON) * 100) / 100
-            redimencionNum()
-            if (resultadoFinal > 99999999999) {
-                pantalla.innerHTML = "+9999999999999"
-                numerosEnOperacionDivicion = []
-
-            } else {
-                pantalla.innerHTML = resultadoFinal
-                numerosEnOperacionDivicion = []
-                numerosEnOperacionDivicion.push(resultadoFinal)
-            }
-        }
-    }
-    identificadorOperacion = "/"
+    operacion('/')
 }
 
 function resultado() {
-    var pantallacontenido = document.getElementById("numerosP").textContent;
-    var pantalla = document.getElementById("numerosP");
 
-    if (identificadorOperacion === "+") {
-        suma()
-        redimencionNum()
-
-    } else {
-        if (identificadorOperacion === "-") {
-            resta()
-            redimencionNum()
-
-        } else {
-            if (identificadorOperacion === "*") {
-                multiplicacion()
-                redimencionNum()
-
-            } else {
-                if (identificadorOperacion === "/") {
-                    dividir()
-                    redimencionNum()
-
-                }
-            }
-        }
-    }
-    numeros = []
-    numerosEnOperacionResta = []
-    numerosEnOperacionSuma = []
-    numerosEnOperacionMultiplicacion = []
-    numerosEnOperacionDivicion = []
-    numero1 = 0
-    resultadoFinal = 0
 }
 function reset() {
-    var pantalla = document.getElementById("numerosP");
-    var contenido = document.getElementById("Contenido")
 
-    pantalla.innerHTML = ""
-    numeros = []
-    numerosEnOperacionResta = []
-    numerosEnOperacionSuma = []
-    numerosEnOperacionMultiplicacion = []
-    numerosEnOperacionDivicion = []
-    numero1 = 0
-    resultadoFinal = 0
-    identificadorOperacion = ""
-    if (contenido.offsetWidth != 650) {
-
-        pantalla.style.marginTop = "15px"
-
-        pantalla.style.fontSize = "500%"
-
-    } else {
-        pantalla.style.marginTop = "0"
-        pantalla.style.fontSize = "90px"
-
-    }
 
 }
