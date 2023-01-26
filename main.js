@@ -102,12 +102,11 @@ function temas() {
     }
 }
 var numeros = []
-
-
 function redimencionNum() {
 }
-
-let valores = (numero) => {
+let condiciondoperadorsincontrol//variable para que no se opere cuando se preciona varias veces un operador si no que se realice una sola vez hasta oprimir otro numero
+let valores = (numero) => {//funcion que imprime los valores en pantalla
+    condiciondoperadorsincontrol = true
     var pantalla = document.getElementById("numerosP")
     if (numeros.length < 14) {
         numeros.push(numero)
@@ -115,6 +114,7 @@ let valores = (numero) => {
     var numeroArray = numeros.toString().replace(/,/g, "")
     pantalla.innerHTML = numeroArray
 }
+//funciones de los valores precionados
 function cero() {
     redimencionNum()
     valores(0)
@@ -155,61 +155,89 @@ function nueve() {
     redimencionNum()
     valores(9)
 }
-function del() {
-}
-
 function punto() {
-
+    valores('.')
 }
-let numerosingresados = []
-let operacion = (tipoOperacion) => {
+
+let numerosingresados = []//arreglo que almacena los datos que se operan
+let resultadelosdosnumeros
+let operadorPendiente = ''//string que almacena que operador es seleccionado
+let operacion = (tipoOperacion) => {//funcion que condiciona el operador seleccionado
     let numerodigitado = parseFloat(document.getElementById("numerosP").innerText)
     numerosingresados.push(numerodigitado)
     numeros = []
-    if (numerosingresados.length >= 2) {//se verifica q existan dos numeros para operar
-        switch (tipoOperacion) {
-            case '+':
-                resultadelosdosnumeros = numerosingresados[0] + numerosingresados[1]
-                numerosingresados = [resultadelosdosnumeros]//se reinica el valor de los dos datos a  un solo dato
-                break
-            case '-':
-                resultadelosdosnumeros = numerosingresados[0] - numerosingresados[1]
-                numerosingresados = [resultadelosdosnumeros]//se reinica el valor de los dos datos a  un solo dato
-                break
-            case '*':
-                resultadelosdosnumeros = numerosingresados[0] * numerosingresados[1]
-                numerosingresados = [resultadelosdosnumeros]//se reinica el valor de los dos datos a  un solo dato
-                break
-            case '/':
-                resultadelosdosnumeros = numerosingresados[0] / numerosingresados[1]
-                numerosingresados = [resultadelosdosnumeros]//se reinica el valor de los dos datos a  un solo dato
-                break        }
-        document.getElementById("numerosP").innerHTML =(resultadelosdosnumeros)
-        numerosingresados = [resultadelosdosnumeros]//se reinica el valor de los dos datos a  un solo dato
-    }else{
-
+    switch (tipoOperacion) {
+        case '+':
+            operacionPendiente()
+            operadorPendiente = '+'
+            break
+        case '-':
+            operacionPendiente()
+            operadorPendiente = '-'
+            break
+        case '*':
+            operacionPendiente()
+            operadorPendiente = '*'
+            break
+        case '/':
+            operacionPendiente()
+            operadorPendiente = '/'
+            break
+    }
+    document.getElementById("numerosP").innerHTML = (numerosingresados)
+}
+let operacionPendiente = () => {//funcion que realiza los calculos dependiendo de la var operadorpendiente
+    if (operadorPendiente == '+') {
+        numerosingresados = [numerosingresados[0] + numerosingresados[1]]
+    } else {
+        if (operadorPendiente == '-') {
+            numerosingresados = [numerosingresados[0] - numerosingresados[1]]
+        } else {
+            if (operadorPendiente == '*') {
+                numerosingresados = [numerosingresados[0] * numerosingresados[1]]
+            } else {
+                if (operadorPendiente == '/') {
+                    numerosingresados = [numerosingresados[0] / numerosingresados[1]]
+                }
+            }
+        }
     }
 }
+//funciones que llevan la logica de los procesos de datos 
 function suma() {
-    operacion('+')
+    if (operadorPendiente != '+' || condiciondoperadorsincontrol == true) {
+        operacion('+')
+        condiciondoperadorsincontrol = false
+    }
 }
 function resta() {
-    operacion('-')
-
+    if (operadorPendiente != '-' || condiciondoperadorsincontrol == true) {
+        operacion('-')
+        condiciondoperadorsincontrol = false
+    }
 }
 function multiplicacion() {
-    operacion('*')
-
+    if (operadorPendiente != '*' || condiciondoperadorsincontrol == true) {
+        operacion('*')
+        condiciondoperadorsincontrol = false
+    }
 }
 function dividir() {
-
-    operacion('/')
+    if (operadorPendiente != '/' || condiciondoperadorsincontrol == true) {
+        operacion('/')
+        condiciondoperadorsincontrol = false
+    }
+}
+function del() {//funcion para eliminar el ultimo digito
+    let numerosEnPantalla = document.getElementById("numerosP").innerText
+    document.getElementById("numerosP").innerHTML = numerosEnPantalla.slice(0, -1);
+    numeros.pop()
 }
 
-function resultado() {
+let resultado = () => {
+    operacionPendiente()
+    document.getElementById("numerosP").innerHTML = (numerosingresados)
 
 }
 function reset() {
-
-
 }
