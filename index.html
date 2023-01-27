@@ -8,7 +8,6 @@
   
   <title>Frontend Mentor | Calculator app</title>
   <link rel="stylesheet" href="style.css">
-  <script src="main.js"></script>
   
 
 </head>
@@ -53,20 +52,20 @@
   
       </div>
       <div id="Operaciones">
-            <div onclick="siete()" id="7" class=" btnCal"><p>7</p></div>
-            <div onclick="ocho()" id="8" class=" btnCal"><p>8</p></div>
-            <div onclick="nueve()" id="9" class=" btnCal"><p>9</p></div>
+            <div onclick="valores(7)" id="7" class=" btnCal"><p>7</p></div>
+            <div onclick="valores(8)" id="8" class=" btnCal"><p>8</p></div>
+            <div onclick="valores(9)" id="9" class=" btnCal"><p>9</p></div>
             <div onclick="del()" id="DEL" class="shadowDelReset btnCal"><p>DEL</p></div>
-            <div onclick="cuatro()" id="4" class=" btnCal"><p>4</p></div>
-            <div onclick="cinco()" id="5" class=" btnCal"><p>5</p></div>
-            <div onclick="seis()" id="6" class=" btnCal"><p>6</p></div>
+            <div onclick="valores(4)" id="4" class=" btnCal"><p>4</p></div>
+            <div onclick="valores(5)" id="5" class=" btnCal"><p>5</p></div>
+            <div onclick="valores(6)" id="6" class=" btnCal"><p>6</p></div>
             <div onclick="suma()" id="+" class=" btnCal"><p>+</p></div>
-            <div onclick="uno()" id="1" class=" btnCal"><p>1</p></div>
-            <div onclick="dos()" id="2" class=" btnCal"><p>2</p></div>
-            <div onclick="tres()" id="3" class=" btnCal"><p>3</p></div>
+            <div onclick="valores(1)" id="1" class=" btnCal"><p>1</p></div>
+            <div onclick="valores(2)" id="2" class=" btnCal"><p>2</p></div>
+            <div onclick="valores(3)" id="3" class=" btnCal"><p>3</p></div>
             <div onclick="resta()" id="-" class=" btnCal"><p>-</p></div>
-            <div onclick="punto()" id="." class="  btnCal"><p>.</p></div>
-            <div onclick="cero()" id="0" class=" btnCal"><p>0</p></div>
+            <div onclick="valores('.')" id="." class="  btnCal"><p>.</p></div>
+            <div onclick="valores(0)" id="0" class=" btnCal"><p>0</p></div>
             <div onclick="dividir()" id="/" class="  btnCal"><p>/</p></div>
             <div onclick="multiplicacion()" id="x" class=" btnCal"><p>x</p></div>
             <div onclick="reset()" id="RESET" class="shadowDelReset   btnCal"><p>RESET</p></div>
@@ -79,6 +78,8 @@
       Coded by <a href="https://github.com/Jank1510">Jehan Carlos Hurtado</a>.
     </div>
   </div>  
+  <script src="./js/logica.js"></script>
+  <script src="./js/diseño.js"></script>
 
 </body>
 </html>
