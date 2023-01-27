@@ -3,7 +3,7 @@ let condiciondoperadorsincontrol//variable para que no se opere cuando se precio
 let valores = (numero) => {//funcion que imprime los valores en pantalla
     condiciondoperadorsincontrol = true
     let pantalla = document.getElementById("numerosP")
-    if (numeros.length < 14) {
+    if (numeros.length < 17) {
         numeros.push(numero)
     }
     let numeroArray = numeros.toString().replace(/,/g, "")
@@ -12,6 +12,7 @@ let valores = (numero) => {//funcion que imprime los valores en pantalla
 let numerosIngresados = []//arreglo que almacena los datos que se operan
 let resultadelosdosnumeros
 let operadorPendiente = ''//string que almacena que operador es seleccionado
+
 let operacion = (tipoOperacion) => {//funcion que condiciona el operador seleccionado
     let numerodigitado = parseFloat(document.getElementById("numerosP").innerText)
     numerosIngresados.push(numerodigitado)
@@ -34,6 +35,7 @@ let operacion = (tipoOperacion) => {//funcion que condiciona el operador selecci
             operadorPendiente = '/'
             break
     }
+    redimencionPresionarOperacion(numerosIngresados.toString())
     document.getElementById("numerosP").innerHTML = (numerosIngresados)
 }
 let operacionPendiente = () => {//funcion que realiza los calculos dependiendo de la var operadorpendiente

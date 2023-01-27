@@ -35,7 +35,7 @@ function temas() {
         }
         let cssresultado = "box-shadow: 0px 0.4vw 0px 0px hsl(6, 70%, 34%);background-color:hsl(6, 63%, 50%)"
         resultado.style.cssText = cssresultado
-        tema=2
+        tema = 2
     } else {
         if (tema === 2) {
             pantalla.style.color = "hsl(60, 10%, 19%)"
@@ -57,7 +57,7 @@ function temas() {
             }
             let cssresultado = "box-shadow: 0px 0.4vw 0px 0px hsl(25, 99%, 27%);background-color:hsl(25, 98%, 40%)"
             resultado.style.cssText = cssresultado
-            tema=3
+            tema = 3
         } else {
             if (tema === 3) {
                 pantalla.style.color = "hsl(52, 100%, 62%)"
@@ -80,26 +80,42 @@ function temas() {
                 }
                 let cssresultado = "box-shadow: 0px 0.4vw 0px 0px hsl(177, 92%, 70%);background-color: hsl(176, 100%, 44%);color:hsl(198, 20%, 13%)"
                 resultado.style.cssText = cssresultado
-                tema=1;
+                tema = 1;
             }
         }
     }
-}  
+}
 //funciones de efecto touch
-let down=(id)=>{
-    document.getElementById(id).className='push btnCal'
+let down = (id) => {
+    document.getElementById(id).className = 'push btnCal'
+    redimencionPresionarNumero()
 
-    let anchoPantalla=document.getElementById('pantalla').clientWidth
-    let anchonumeros=document.getElementById('numerosP').clientWidth
-    if(anchonumeros>anchoPantalla){
-        document.getElementById('numerosP').style.fontSize=
-        console.log(parseFloat(window.getComputedStyle(document.getElementById('numerosP')).fontSize)-16)
-    }
-    
- }
- let up=(id)=>{
-    document.getElementById(id).className='nopush btnCal'
- }
 
+}
+let up = (id) => {
+    document.getElementById(id).className = 'nopush btnCal'
+}
 //funciones para redimencion de tamaño de los numeros en pantalla
 
+
+let redimencionPresionarNumero = () => {
+    let anchoPantalla = document.getElementById('padre').clientWidth
+    let anchoentrada = document.getElementById('pantalla').clientWidth
+    let numeros = document.getElementById('numerosP')
+
+    let fontSizeOriginal = parseFloat(window.getComputedStyle(numeros).fontSize)
+    if ((numeros.clientWidth * 100) / (anchoPantalla) > (anchoentrada * 100) / (anchoPantalla) - 3) {
+        numeros.style.fontSize = ((fontSizeOriginal * 100) / (anchoPantalla) - 1) + 'vw'
+    }
+}
+let redimencionPresionarOperacion = (numIngresado) => {
+    let anchoPantalla = document.getElementById('padre').clientWidth
+    let anchoentrada = document.getElementById('pantalla').clientWidth
+    let numeros = document.getElementById('numerosP')
+
+    if ((numIngresado.split("")).length >= 10) {
+        let fontSizeOriginal = parseFloat(window.getComputedStyle(numeros).fontSize)
+        numeros.style.fontSize = (((fontSizeOriginal * 100) / (anchoPantalla)) - ((numIngresado.split("")).length-10)) + 'vw'
+        
+    }
+}
