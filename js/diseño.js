@@ -1,4 +1,4 @@
-let tema = 2 
+let tema = 2;
 function temas() {
     //elementos por id
     let btn1 = document.getElementById("tema1")
@@ -25,15 +25,15 @@ function temas() {
         btn3.style.backgroundColor = "hsl(223, 31%, 20%)"
         entrada.style.backgroundColor = "hsl(224, 36%, 15%)"
         cabezera.style.color = "white"
-        let cssbtnCal = "box-shadow: 0px 6px 0px 0px hsl(28, 16%, 65%);background-color:hsl(30, 25%, 89%);color:hsl(221, 14%, 31%)"
-        let cssShadowDelRes = "box-shadow: 0px 6px 0px 0px  hsl(224, 28%, 35%);background-color:hsl(225, 21%, 49%)"
+        let cssbtnCal = "box-shadow: 0px 0.4vw 0px 0px hsl(28, 16%, 65%);background-color:hsl(30, 25%, 89%);color:hsl(221, 14%, 31%)"
+        let cssShadowDelRes = "box-shadow: 0px 0.4vw 0px 0px  hsl(224, 28%, 35%);background-color:hsl(225, 21%, 49%)"
         for (let i = 0; i < BtnCalculadora.length; i++) {
             BtnCalculadora[i].style.cssText = cssbtnCal;
         }
         for (let i = 0; i < shadowDelReset.length; i++) {
             shadowDelReset[i].style.cssText = cssShadowDelRes;
         }
-        let cssresultado = "box-shadow: 0px 6px 0px 0px hsl(6, 70%, 34%);background-color:hsl(6, 63%, 50%)"
+        let cssresultado = "box-shadow: 0px 0.4vw 0px 0px hsl(6, 70%, 34%);background-color:hsl(6, 63%, 50%)"
         resultado.style.cssText = cssresultado
         tema=2
     } else {
@@ -47,15 +47,15 @@ function temas() {
             btn3.style.backgroundColor = "hsl(0, 5%, 81%)"
             entrada.style.backgroundColor = "hsl(0, 0%, 93%)"
             cabezera.style.color = "hsl(60, 10%, 19%)"
-            let cssbtnCal = "box-shadow: 0px 6px 0px 0px hsl(35, 11%, 61%);background-color:hsl(45, 7%, 89%);color:hsl(60, 10%, 19%)"
-            let cssShadowDelRes = "box-shadow: 0px 6px 0px 0px  hsl(185, 58%, 25%);background-color:hsl(185, 42%, 37%)"
+            let cssbtnCal = "box-shadow: 0px 0.4vw 0px 0px hsl(35, 11%, 61%);background-color:hsl(45, 7%, 89%);color:hsl(60, 10%, 19%)"
+            let cssShadowDelRes = "box-shadow: 0px 0.4vw 0px 0px  hsl(185, 58%, 25%);background-color:hsl(185, 42%, 37%)"
             for (let i = 0; i < BtnCalculadora.length; i++) {
                 BtnCalculadora[i].style.cssText = cssbtnCal;
             }
             for (let i = 0; i < shadowDelReset.length; i++) {
                 shadowDelReset[i].style.cssText = cssShadowDelRes;
             }
-            let cssresultado = "box-shadow: 0px 6px 0px 0px hsl(25, 99%, 27%);background-color:hsl(25, 98%, 40%)"
+            let cssresultado = "box-shadow: 0px 0.4vw 0px 0px hsl(25, 99%, 27%);background-color:hsl(25, 98%, 40%)"
             resultado.style.cssText = cssresultado
             tema=3
         } else {
@@ -69,8 +69,8 @@ function temas() {
                 btn3.style.backgroundColor = "hsl(176, 100%, 44%)"
                 entrada.style.backgroundColor = "hsl(268, 71%, 12%)"
                 cabezera.style.color = "hsl(52, 100%, 62%)"
-                let cssbtnCal = "box-shadow: 0px 6px 0px 0px hsl(290, 70%, 36%);background-color:hsl(268, 47%, 21%);color:hsl(52, 100%, 62%)"
-                let cssShadowDelRes = "box-shadow: 0px 6px 0px 0px hsl(285, 91%, 52%);background-color:hsl(281, 89%, 26%)"
+                let cssbtnCal = "box-shadow: 0px 0.4vw 0px 0px hsl(290, 70%, 36%);background-color:hsl(268, 47%, 21%);color:hsl(52, 100%, 62%)"
+                let cssShadowDelRes = "box-shadow: 0px 0.4vw 0px 0px hsl(285, 91%, 52%);background-color:hsl(281, 89%, 26%)"
                 for (let i = 0; i < BtnCalculadora.length; i++) {
                     BtnCalculadora[i].style.cssText = cssbtnCal;
                 }
@@ -78,10 +78,28 @@ function temas() {
                     shadowDelReset[i].style.backgroundColor = "";
                     shadowDelReset[i].style.cssText = cssShadowDelRes;
                 }
-                let cssresultado = "box-shadow: 0px 6px 0px 0px hsl(177, 92%, 70%);background-color: hsl(176, 100%, 44%);color:hsl(198, 20%, 13%)"
+                let cssresultado = "box-shadow: 0px 0.4vw 0px 0px hsl(177, 92%, 70%);background-color: hsl(176, 100%, 44%);color:hsl(198, 20%, 13%)"
                 resultado.style.cssText = cssresultado
-                tema=1
+                tema=1;
             }
         }
     }
-}
+}  
+//funciones de efecto touch
+let down=(id)=>{
+    document.getElementById(id).className='push btnCal'
+
+    let anchoPantalla=document.getElementById('pantalla').clientWidth
+    let anchonumeros=document.getElementById('numerosP').clientWidth
+    if(anchonumeros>anchoPantalla){
+        document.getElementById('numerosP').style.fontSize=
+        console.log(parseFloat(window.getComputedStyle(document.getElementById('numerosP')).fontSize)-16)
+    }
+    
+ }
+ let up=(id)=>{
+    document.getElementById(id).className='nopush btnCal'
+ }
+
+//funciones para redimencion de tamaño de los numeros en pantalla
+

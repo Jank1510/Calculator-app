@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Calculator app</title>
   <link rel="stylesheet" href="style.css">
-  
+
 
 </head>
+
 <body>
   <div id="padre">
     <div id="Contenido">
-      <div  id="Cabezera">
+      <div id="Cabezera">
         <div class="flotante">
           <h1>calc</h1>
         </div>
@@ -27,7 +30,7 @@
               <div class="flotante num">
                 <p>1</p>
               </div>
-              <div class="flotante num"> 
+              <div class="flotante num">
                 <p>2</p>
               </div>
               <div class="flotante num">
@@ -36,10 +39,10 @@
             </div>
             <div onclick="temas()" id="contenedorBTN">
               <div id="tema1" class="flotante btn">
-  
+
               </div>
-              <div id="tema2" class="flotante btn"> 
-    
+              <div id="tema2" class="flotante btn">
+
               </div>
               <div id="tema3" class="flotante btn">
               </div>
@@ -48,38 +51,95 @@
         </div>
       </div>
       <div id="Entrada">
-        <label id="pantalla"><p id="numerosP"></p></label>
-  
+        <label id="pantalla">
+          <p id="numerosP"></p>
+        </label>
+
       </div>
       <div id="Operaciones">
-            <div onclick="valores(7)" id="7" class=" btnCal"><p>7</p></div>
-            <div onclick="valores(8)" id="8" class=" btnCal"><p>8</p></div>
-            <div onclick="valores(9)" id="9" class=" btnCal"><p>9</p></div>
-            <div onclick="del()" id="DEL" class="shadowDelReset btnCal"><p>DEL</p></div>
-            <div onclick="valores(4)" id="4" class=" btnCal"><p>4</p></div>
-            <div onclick="valores(5)" id="5" class=" btnCal"><p>5</p></div>
-            <div onclick="valores(6)" id="6" class=" btnCal"><p>6</p></div>
-            <div onclick="suma()" id="+" class=" btnCal"><p>+</p></div>
-            <div onclick="valores(1)" id="1" class=" btnCal"><p>1</p></div>
-            <div onclick="valores(2)" id="2" class=" btnCal"><p>2</p></div>
-            <div onclick="valores(3)" id="3" class=" btnCal"><p>3</p></div>
-            <div onclick="resta()" id="-" class=" btnCal"><p>-</p></div>
-            <div onclick="valores('.')" id="." class="  btnCal"><p>.</p></div>
-            <div onclick="valores(0)" id="0" class=" btnCal"><p>0</p></div>
-            <div onclick="dividir()" id="/" class="  btnCal"><p>/</p></div>
-            <div onclick="multiplicacion()" id="x" class=" btnCal"><p>x</p></div>
-            <div onclick="reset()" id="RESET" class="shadowDelReset   btnCal"><p>RESET</p></div>
-            <div onclick="resultado()" id="resultado" class="  btnCal"><p>=</p></div>
-          </div>
+        <div onclick="valores(7)" onpointerdown=" down('7') " onmousedown="down('7')" onmouseup="up('7')" id="7"
+          class=" btnCal">
+          <p>7</p>
+        </div>
+        <div onclick="valores(8)" onpointerdown=" down('8') " onmousedown="down('8')" onmouseup="up('8')" id="8"
+          class=" btnCal">
+          <p>8</p>
+        </div>
+        <div onclick="valores(9)" onpointerdown=" down('9') " onmousedown="down('9')" onmouseup="up('9')" id="9"
+          class=" btnCal">
+          <p>9</p>
+        </div>
+        <div onclick="del()" onpointerdown=" down('DEL')" onmousedown="down('DEL')" onmouseup="up('DEL')" id="DEL"
+          class="shadowDelReset btnCal">
+          <p>DEL</p>
+        </div>
+        <div onclick="valores(4)" onpointerdown=" down('4') " onmousedown="down('4')" onmouseup="up('4')" id="4"
+          class=" btnCal">
+          <p>4</p>
+        </div>
+        <div onclick="valores(5)" onpointerdown=" down('5') " onmousedown="down('5')" onmouseup="up('5')" id="5"
+          class=" btnCal">
+          <p>5</p>
+        </div>
+        <div onclick="valores(6)" onpointerdown=" down('6') " onmousedown="down('6')" onmouseup="up('6')" id="6"
+          class=" btnCal">
+          <p>6</p>
+        </div>
+        <div onclick="suma()" onpointerdown=" down('+') " onmousedown="down('+')" onmouseup="up('+')" id="+"
+          class=" btnCal">
+          <p>+</p>
+        </div>
+        <div onclick="valores(1)" onpointerdown=" down('1') " onmousedown="down('1')" onmouseup="up('1')" id="1"
+          class=" btnCal">
+          <p>1</p>
+        </div>
+        <div onclick="valores(2)" onpointerdown=" down('2') " onmousedown="down('2')" onmouseup="up('2')" id="2"
+          class=" btnCal">
+          <p>2</p>
+        </div>
+        <div onclick="valores(3)" onpointerdown=" down('3') " onmousedown="down('3')" onmouseup="up('3')" id="3"
+          class=" btnCal">
+          <p>3</p>
+        </div>
+        <div onclick="resta()" onpointerdown=" down('-') " onmousedown="down('-')" onmouseup="up('-')" id="-"
+          class=" btnCal">
+          <p>-</p>
+        </div>
+        <div onclick="valores('.')" onpointerdown=" down('.') " onmousedown="down('.')" onmouseup="up('.')" id="."
+          class="  btnCal">
+          <p>.</p>
+        </div>
+        <div onclick="valores(0)" onpointerdown=" down('0') " onmousedown="down('0')" onmouseup="up('0')" id="0"
+          class=" btnCal">
+          <p>0</p>
+        </div>
+        <div onclick="dividir()" onpointerdown=" down('/') " onmousedown="down('/')" onmouseup="up('/')" id="/"
+          class="  btnCal">
+          <p>/</p>
+        </div>
+        <div onclick="multiplicacion()" onpointerdown=" down('x') " onmousedown="down('x')" onmouseup="up('x')" id="x"
+          class=" btnCal">
+          <p>x</p>
+        </div>
+        <div onclick="reset()" onpointerdown=" down('RESET') " onmousedown="down('RESET')" onmouseup="up('RESET')"
+          id="RESET" class="shadowDelReset   btnCal">
+          <p>RESET</p>
+        </div>
+        <div onclick="resultado()" onpointerdown=" down('resultado')" onmousedown="down('resultado')"
+          onmouseup="up('resultado')" id="resultado" class="  btnCal">
+          <p>=</p>
+        </div>
       </div>
     </div>
-<div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="https://github.com/Jank1510">Jehan Carlos Hurtado</a>.
-    </div>
-  </div>  
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/Jank1510">Jehan Carlos Hurtado</a>.
+  </div>
+  </div>
   <script src="./js/logica.js"></script>
   <script src="./js/diseño.js"></script>
 
 </body>
+
 </html>

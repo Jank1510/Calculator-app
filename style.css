@@ -1,5 +1,4 @@
-.attribution {
-    font-size: 11px;
+.attribution { 
     text-align: center;
     position: absolute;
     bottom: 0;
@@ -22,7 +21,7 @@ body {
 }
 
 #Cabezera {
-    height: 95px;
+    height: 5.9vw;
     color: white
 }
 
@@ -35,22 +34,22 @@ body {
 }
 
 .btn {
-    width: 17px;
-    height: 17px;
-    margin-left: 5px;
-    border-radius: 10px;
+    width: 1.05vw;
+    height: 1.05vw;
+    margin-left: 0.3vw;
+    border-radius: 0.7vw;
 }
 
 .num {
-    margin-left: 12px;
-    margin-bottom: -16px;
+    margin-left: 0.8vw;
+    margin-bottom: -1vw;
 }
 
 #contenedorBTN {
     background-color: hsl(223, 31%, 20%);
     display: inline-block;
-    padding: 5px;
-    border-radius: 10px;
+    padding: 0.3vw;
+    border-radius: 0.5vw;
     cursor: pointer;
 }
 
@@ -59,8 +58,8 @@ body {
 }
 
 #txtTHEME {
-    margin-top: 18px;
-    margin-right: 6px;
+    margin-top: 1.1vw;
+    margin-right: 0.4vw;
 }
 
 #seccionesTHEMES {
@@ -73,31 +72,25 @@ body {
 
 .btnCal {
 
-    font-size: 32px;
+    font-size: 2vw;
     font-weight: 700;
     text-align: center;
     background-color: hsl(30, 25%, 89%);
-    border-radius: 15px;
     color: hsl(221, 14%, 31%);
     cursor: pointer;
-    box-shadow: 0px 6px 0px 0px hsl(28, 16%, 65%);
+    box-shadow: 0px 0.4vw 0px 0px hsl(28, 16%, 65%);
+    user-select: none;
 }
 
 .btnCal p {
     margin: 1vh;
 }
-
-.shadowDelReset {
-    background-color: hsl(225, 21%, 49%);
-    background-color: hsl(225, 21%, 49%);
-    box-shadow: 0px 6px 0px 0px hsl(224, 28%, 35%);
-    color: white;
-}
+ 
 
 #resultado {
     background-color: hsl(6, 63%, 50%);
     color: white;
-    box-shadow: 0px 6px 0px 0px hsl(6, 70%, 34%);
+    box-shadow: 0px 0.4vw 0px 0px hsl(6, 70%, 34%);
 }
 
 .txtBlanco {
@@ -109,21 +102,30 @@ body {
     text-align: center;
 }
 
-#pantalla {
-    justify-content: right;
+#pantalla {justify-content: right;
     height: 100%;
     display: flex;
     color: white;
+    align-items: center;
 }
 
-#numerosP {
-    margin-top: 0;
-    font-size: 100px;
+#numerosP { 
+    font-size: 6.2vw;
+}
+#DEL,#RESET{
+
+    background-color: hsl(225, 21%, 49%);
+    background-color: hsl(225, 21%, 49%);
+    box-shadow: 0px 0.4vw 0px 0px hsl(224, 28%, 35%);
+    color: white;
 }
 
 /****************mostly fluid****************/
 
 @media (min-width: 375px) {
+    *{
+        font-size: 5.2vw;
+    }
     #Contenido {
         width: 85%;
         height: 100%;
@@ -133,32 +135,34 @@ body {
         align-items: center;
 
     }
-
+    .attribution {
+        font-size: 1rem;}
     #Entrada {
         height: 15vh;
         background-color: hsl(224, 36%, 15%);
-        border-radius: 5px;
+        border-radius: 0.3vw;
     }
 
-    #Operaciones {
-        background-color: hsl(223, 31%, 20%);
+    #Operaciones {background-color: hsl(223, 31%, 20%);
         margin-top: 3vh;
-        border-radius: 5px;
+        border-radius: 3vw;
         padding: 4vw;
         display: grid;
         grid-template-columns: 18vw 18vw 18vw 18vw;
         width: 80vw;
         column-gap: 2.5vw;
         row-gap: 2vw;
+        grid-template-rows: 10vw 10vw 10vw 10vw 10vw;
         justify-content: center;
     }
 
     .btnCal {
-        width: 18vw;
+        width: 18vw;border-radius: 2vw;height: 10vw;
     }
 
     #pantalla,
-    #Entrada,#Cabezera {
+    #Entrada,
+    #Cabezera {
         width: 88vw;
     }
 
@@ -178,32 +182,46 @@ body {
 
 }
 
+.push {
+    box-shadow: none !important; 
+    margin-top: 0.4vw;
+}
+
+.nopush {
+    margin: 0;
+}
+
 @media (min-width: 1200px) {
+    *{font-size: 2vw;}
     #Contenido {
         width: 40vw;
 
     }
-
+    .attribution {
+        font-size: 0.8vw;}
     #Entrada {
         height: 15vh;
         background-color: hsl(224, 36%, 15%);
-        border-radius: 5px;
+        border-radius: 1.35vw;
     }
 
     #Operaciones {
         background-color: hsl(223, 31%, 20%);
         margin-top: 3vh;
-        border-radius: 5px;
+        border-radius: 1.35vw;
         padding: 2vw;
         display: grid;
         grid-template-columns: 7vw 7vw 7vw 7vw;
         width: 34vw;
         row-gap: 1.5vw;
         column-gap: 2vw;
+        grid-template-rows: 3.65vw 3.65vw 3.65vw 3.65vw 3.65vw;
     }
 
     .btnCal {
         width: 7vw;
+    border-radius: 0.95vw;
+    height: 3.65vw;
     }
 
     #RESET {
@@ -221,7 +239,8 @@ body {
     }
 
     #pantalla,
-    #Entrada,#Cabezera {
+    #Entrada,
+    #Cabezera {
         width: 38vw;
     }
 
