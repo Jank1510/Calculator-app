@@ -1,6 +1,8 @@
 let numeros = [] 
 let condiciondoperadorsincontrol//variable para que no se opere cuando se preciona varias veces un operador si no que se realice una sola vez hasta oprimir otro numero
 let valores = (numero) => {//funcion que imprime los valores en pantalla
+    redimencionPresionarNumero()
+    
     condiciondoperadorsincontrol = true
     let pantalla = document.getElementById("numerosP")
     if (numeros.length < 17) {
@@ -14,6 +16,7 @@ let resultadelosdosnumeros
 let operadorPendiente = ''//string que almacena que operador es seleccionado
 
 let operacion = (tipoOperacion) => {//funcion que condiciona el operador seleccionado
+
     let numerodigitado = parseFloat(document.getElementById("numerosP").innerText)
     numerosIngresados.push(numerodigitado)
     numeros = []
@@ -36,6 +39,7 @@ let operacion = (tipoOperacion) => {//funcion que condiciona el operador selecci
             break
     }
     redimencionPresionarOperacion(numerosIngresados.toString())
+
     document.getElementById("numerosP").innerHTML = (numerosIngresados)
 }
 let operacionPendiente = () => {//funcion que realiza los calculos dependiendo de la var operadorpendiente

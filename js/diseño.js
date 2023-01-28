@@ -88,9 +88,6 @@ function temas() {
 //funciones de efecto touch
 let down = (id) => {
     document.getElementById(id).className = 'push btnCal'
-    redimencionPresionarNumero()
-
-
 }
 let up = (id) => {
     document.getElementById(id).className = 'nopush btnCal'
@@ -112,10 +109,32 @@ let redimencionPresionarOperacion = (numIngresado) => {
     let anchoPantalla = document.getElementById('padre').clientWidth
     let anchoentrada = document.getElementById('pantalla').clientWidth
     let numeros = document.getElementById('numerosP')
+    console.log(((numIngresado.split("")).length) + ' ' + numerosIngresados)
 
-    if ((numIngresado.split("")).length >= 10) {
-        let fontSizeOriginal = parseFloat(window.getComputedStyle(numeros).fontSize)
-        numeros.style.fontSize = (((fontSizeOriginal * 100) / (anchoPantalla)) - ((numIngresado.split("")).length-10)) + 'vw'
-        
-    }
+    switch (((numIngresado.split("")).length)) {
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+            numeros.style.fontSize = '6.2vw'
+            break
+        case 10:
+        case 11:
+            numeros.style.fontSize = '5.2vw'
+            break
+        case 12:
+        case 13:
+        case 14:
+            numeros.style.fontSize = '4.2vw'
+            break 
+        default:
+            numeros.style.fontSize = '3.2vw'
+            break 
+    } 
 }
+
