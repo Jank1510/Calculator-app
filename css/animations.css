@@ -1,0 +1,260 @@
+/*Animaciones*/
+#padre,
+#Operaciones,
+#Entrada,
+.btnCal,
+.shadowDelReset,
+#resultado,
+#numerosP,
+.btn {
+    animation-duration: 0.6s;
+}
+
+@keyframes animationColorsPadre_1-2 {
+    from {
+        background-color: hsl(222, 26%, 31%);
+    }
+
+    to {
+        background-color: hsl(0, 0%, 90%);
+    }
+}
+
+@keyframes animationColorsPadre_2-3 {
+    from {
+        background-color: hsl(0, 0%, 90%);
+    }
+
+    to {
+        background-color: hsl(268, 75%, 9%);
+    }
+}
+
+@keyframes animationColorsPadre_3-1 {
+    from {
+        background-color: hsl(268, 75%, 9%);
+    }
+
+    to {
+        background-color: hsl(222, 26%, 31%);
+    }
+}
+
+@keyframes animationColorsOperaciones_1-2 {
+    from {
+        background-color: hsl(268, 75%, 9%);
+    }
+
+    to {
+        background-color: hsl(0, 5%, 81%);
+    }
+}
+
+@keyframes animationColorsOperaciones_2-3 {
+    from {
+        background-color: hsl(0, 5%, 81%);
+    }
+
+    to {
+        background-color: hsl(268, 71%, 12%);
+    }
+}
+
+@keyframes animationColorsOperacionesandENtrada_3 {
+    from {
+        background-color: hsl(268, 71%, 12%);
+    }
+
+    to {
+        background-color: hsl(268, 75%, 9%);
+    }
+}
+
+@keyframes animationColorsEntrada_1-2 {
+    from {
+        background-color: hsl(268, 75%, 9%);
+    }
+
+    to {
+        background-color: rgb(237, 237, 237);
+    }
+}
+
+@keyframes animationColorsEntrada_2-3 {
+    from {
+        background-color: rgb(237, 237, 237);
+    }
+
+    to {
+        background-color: hsl(268, 71%, 12%);
+    }
+}
+
+@keyframes btnLigth_1-2 {
+    from {
+        box-shadow: 0px 0.4vw 0px 0px hsl(28, 16%, 65%);
+        background-color: hsl(30, 25%, 89%);
+        color: hsl(221, 14%, 31%)
+    }
+
+    to {
+        box-shadow: 0px 0.4vw 0px 0px hsl(35, 11%, 61%);
+        background-color: hsl(45, 7%, 89%);
+        color: hsl(60, 10%, 19%)
+    }
+}
+
+@keyframes btnLigth_2-3 {
+    from {
+        box-shadow: 0px 0.4vw 0px 0px hsl(35, 11%, 61%);
+        background-color: hsl(45, 7%, 89%);
+        color: hsl(60, 10%, 19%);
+    }
+
+    to {
+        box-shadow: 0px 0.4vw 0px 0px hsl(290, 70%, 36%);
+        background-color: hsl(268, 47%, 21%);
+        color: hsl(52, 100%, 62%);
+    }
+}
+
+@keyframes btnLigth_3-1 {
+    from {
+        box-shadow: 0px 0.4vw 0px 0px hsl(290, 70%, 36%);
+        background-color: hsl(268, 47%, 21%);
+        color: hsl(52, 100%, 62%)
+    }
+
+    to {
+        box-shadow: 0px 0.4vw 0px 0px hsl(28, 16%, 65%);
+        background-color: hsl(30, 25%, 89%);
+        color: hsl(221, 14%, 31%)
+    }
+}
+
+@keyframes btntwo_1-2 {
+    from {
+        box-shadow: 0px 0.4vw 0px 0px hsl(224, 28%, 35%);
+        background-color: hsl(225, 21%, 49%)
+    }
+
+    to {
+        box-shadow: 0px 0.4vw 0px 0px hsl(185, 58%, 25%);
+        background-color: hsl(185, 42%, 37%)
+    }
+}
+
+@keyframes btntwo_2-3 {
+    from {
+        box-shadow: 0px 0.4vw 0px 0px hsl(185, 58%, 25%);
+        background-color: hsl(185, 42%, 37%)
+    }
+
+    to {
+        box-shadow: 0px 0.4vw 0px 0px hsl(285, 91%, 52%);
+        background-color: hsl(281, 89%, 26%)
+    }
+}
+
+@keyframes btntwo_3-1 {
+    from {
+        box-shadow: 0px 0.4vw 0px 0px hsl(285, 91%, 52%);
+        background-color: hsl(281, 89%, 26%)
+    }
+
+    to {
+        box-shadow: 0px 0.4vw 0px 0px hsl(224, 28%, 35%);
+        background-color: hsl(225, 21%, 49%)
+    }
+}
+
+@keyframes btnresultado_1-2 {
+    from {
+        box-shadow: 0px 0.4vw 0px 0px hsl(6, 70%, 34%);
+        background-color: hsl(6, 63%, 50%)
+    }
+
+    to {
+        box-shadow: 0px 0.4vw 0px 0px hsl(25, 99%, 27%);
+        background-color: hsl(25, 98%, 40%)
+    }
+}
+
+@keyframes btnresultado_2-3 {
+    from {
+        box-shadow: 0px 0.4vw 0px 0px hsl(25, 99%, 27%);
+        background-color: hsl(25, 98%, 40%)
+    }
+
+    to {
+        box-shadow: 0px 0.4vw 0px 0px hsl(177, 92%, 70%);
+        background-color: hsl(176, 100%, 44%);
+        color: hsl(198, 20%, 13%)
+    }
+}
+
+@keyframes btnresultado_3-1 {
+    from {
+        box-shadow: 0px 0.4vw 0px 0px hsl(177, 92%, 70%);
+        background-color: hsl(176, 100%, 44%);
+        color: hsl(198, 20%, 13%)
+    }
+
+    to {
+        box-shadow: 0px 0.4vw 0px 0px hsl(6, 70%, 34%);
+        background-color: hsl(6, 63%, 50%)
+    }
+}
+
+@keyframes colortxt_1-2 {
+    from {
+        color: white;
+    }
+
+    to {
+        color: hsl(60, 10%, 19%)
+    }
+}
+
+@keyframes colortxt_2-3 {
+    from {
+        color: hsl(60, 10%, 19%);
+    }
+
+    to {
+        color: hsl(52, 100%, 62%);
+    }
+}
+
+@keyframes colortxt_3-1 {
+    from {
+        color: hsl(52, 100%, 62%);
+    }
+
+    to {
+        color: white;
+    }
+}
+
+@keyframes btnMovimiento_1-2_and_2-3 {
+    from {
+        margin-left: -1.7vw;
+    }
+
+    to {
+        margin-left: 0.3vw;
+    }
+}
+
+@keyframes btnMovimiento_3-1 {
+    from {
+        margin-left: 4.25vw;
+        position: absolute;
+    }
+
+    to {
+        margin-left: 0.3vw;
+        position: absolute;
+
+    }
+}
