@@ -107,3 +107,140 @@ function reset() {
     document.getElementById("numerosP").innerHTML = ''
     numeros = []
 }
+
+document.addEventListener("keydown", function (event) {
+    console.log(event.key)
+
+    switch (event.key) {
+        case '1':
+            valores(1);
+            document.getElementById(1).className = 'push btnCal'
+            break
+        case '2':
+            document.getElementById(2).className = 'push btnCal'
+            valores(2);
+            break
+        case '3':
+            document.getElementById(3).className = 'push btnCal'
+            valores(3);
+            break
+        case '4':
+            document.getElementById(4).className = 'push btnCal'
+            valores(4);
+            break
+        case '5':
+            document.getElementById(5).className = 'push btnCal'
+            valores(5);
+            break
+        case '6':
+            document.getElementById(6).className = 'push btnCal'
+            valores(6);
+            break
+        case '7':
+            document.getElementById(7).className = 'push btnCal'
+            valores(7);
+            break
+        case '8':
+            document.getElementById(8).className = 'push btnCal'
+            valores(8);
+            break
+        case '9':
+            document.getElementById(9).className = 'push btnCal'
+            valores(9);
+            break
+        case '0':
+            document.getElementById(0).className = 'push btnCal'
+            valores(0);
+            break
+        case 'Backspace':
+            document.getElementById('DEL').className = 'push btnCal'
+            del()
+            break
+        case '+':
+            document.getElementById('+').className = 'push btnCal'
+            suma()
+            break
+        case '-':
+            document.getElementById('-').className = 'push btnCal'
+            resta()
+            break
+        case '/':
+            document.getElementById('/').className = 'push btnCal'
+            dividir()
+            break
+        case '*':
+            document.getElementById('x').className = 'push btnCal'
+            multiplicacion()
+            break
+        case 'Enter':
+            document.getElementById('resultado').className = 'push btnCal'
+            resultado()
+            break
+        case 'Escape':
+            document.getElementById('RESET').className = 'push btnCal'
+            reset()
+            break
+        case '.':
+            document.getElementById('.').className = 'push btnCal'
+            valores('.')
+            break
+    }
+})
+document.addEventListener("keyup", function (event) {
+    switch (event.key) {
+        case '1':
+            document.getElementById(1).className = 'nopush btnCal'
+            break
+        case '2':
+            document.getElementById(2).className = 'nopush btnCal'
+            break
+        case '3':
+            document.getElementById(3).className = 'nopush btnCal'
+            break
+        case '4':
+            document.getElementById(4).className = 'nopush btnCal'
+            break
+        case '5':
+            document.getElementById(5).className = 'nopush btnCal'
+            break
+        case '6':
+            document.getElementById(6).className = 'nopush btnCal'
+            break
+        case '7':
+            document.getElementById(7).className = 'nopush btnCal'
+            break
+        case '8':
+            document.getElementById(8).className = 'nopush btnCal'
+            break
+        case '9':
+            document.getElementById(9).className = 'nopush btnCal'
+            break
+        case '0':
+            document.getElementById(0).className = 'nopush btnCal'
+            break
+        case 'Backspace':
+            document.getElementById('DEL').className = 'nopush btnCal' 
+            break
+        case '+':
+            document.getElementById('+').className = 'nopush btnCal' 
+            break
+        case '-':
+            document.getElementById('-').className = 'nopush btnCal' 
+            break
+        case '/':
+            document.getElementById('/').className = 'nopush btnCal' 
+            break
+        case '*':
+            document.getElementById('x').className = 'nopush btnCal' 
+            break
+        case 'Enter':
+            document.getElementById('resultado').className = 'nopush btnCal' 
+            break
+        case 'Escape':
+            document.getElementById('RESET').className = 'nopush btnCal' 
+            break
+        case '.':
+            document.getElementById('.').className = 'nopush btnCal' 
+            break
+    }
+})
